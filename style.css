@@ -1,0 +1,77 @@
+h2 {
+    background-color: black;
+    color: white;
+}
+
+h2:hover {
+    background-color: white;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+a::before {
+    content: attr(title);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    padding: 5px;
+    background-color: red;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+a:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+a:visited {
+    color: red;
+}
+
+input:disabled {
+    background-color: beige;
+}
+
+input:checked {
+    background-color: rebeccapurple;
+}
+
+p::before {
+    content: '- - - - - - - - - - - - - - - - - - -';
+    color: chocolate;
+}
+
+p::after {
+    content: ' ok!';
+    color: red;
+    font-size: larger;
+}
+
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    margin: 10px 0;
+}
+
+.loading::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 10px;
+    background-color: #007bff;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    from {
+        width: 0%;
+    } to {
+        width: 100%;
+    }
+}
